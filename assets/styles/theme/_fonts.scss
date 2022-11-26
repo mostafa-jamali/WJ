@@ -23,11 +23,38 @@
   src: url('../fonts/IranSans/IRANSans.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: IranYekan;
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../fonts/IranYekan/Qs_Iranyekan bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: IranYekan;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/IranYekan/Qs_Iranyekan medium.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: IranYekan;
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/IranYekan/Qs_Iranyekan.ttf') format('truetype');
+}
 
 .font-iransans {
   font-family: IRANSans, serif !important;
 }
 
+.font-iranyekan {
+  font-family: IranYekan, serif !important;
+}
 
 .font-10 {
   font-size: $font-10 !important;

@@ -17,11 +17,10 @@
 
           <!-- Left aligned nav items -->
           <b-navbar-nav class="mr-auto">
-
             <b-nav-item-dropdown left class="mr-5">
               <!-- Using 'button-content' slot -->
               <template #button-content>
-                <b-avatar size="1.5rem" variant="dark" class="mx-2"></b-avatar>
+                <i class="icon-user mx-2"></i>
                 <em>کاربر</em>
               </template>
               <b-dropdown-item href="/">پروفایل</b-dropdown-item>
@@ -46,7 +45,9 @@
           <b-collapse id="navbar-toggle-collapse" is-nav>
             <b-navbar-nav class="pr-0">
               <b-nav-item href="/">خانه</b-nav-item>
-              <b-nav-item href="/">آموزش‌ها</b-nav-item>
+              <b-nav-item href="/">محصولات</b-nav-item>
+              <b-nav-item href="/">خدمات</b-nav-item>
+              <b-nav-item href="/">وبلاگ</b-nav-item>
             </b-navbar-nav>
 
             <!-- Left aligned nav items -->
@@ -54,13 +55,12 @@
               <b-nav-item-dropdown right>
                 <!-- Using 'button-content' slot -->
                 <template #button-content>
-                  <b-avatar size="2rem" variant="dark" class="ml-2 my-2"></b-avatar>
+                  <i class="icon-user mx-2"></i>
                   <em>کاربر</em>
                 </template>
                 <b-dropdown-item href="/">پروفایل</b-dropdown-item>
                 <b-dropdown-item @click="logOutUser">خروج</b-dropdown-item>
               </b-nav-item-dropdown>
-
             </b-navbar-nav>
           </b-collapse>
         </b-container>
