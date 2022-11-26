@@ -1,7 +1,7 @@
 <template>
   <div class="wj-footer">
     <b-container class="py-sm-3 py-md-6">
-      footer
+      <!-- no footer -->
     </b-container>
   </div>
 </template>
