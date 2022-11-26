@@ -12,7 +12,7 @@
 
   .custom-control-input:checked ~ .custom-control-label {
     &::before {
-      background-color: $secondary !important;
+      background-color: $primary !important;
       clip-path: url(#custom-pagination-mask-path);
       border: none !important;
     }
@@ -63,14 +63,4 @@
   }
 }
 
-.container,
-.container-fluid,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm {
-  @include sm-rule {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-}
+

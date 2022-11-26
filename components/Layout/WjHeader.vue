@@ -4,30 +4,24 @@
       <b-navbar toggleable="lg" type="dark" variant="dark" fixed="top">
         <!-- PC header -->
         <b-container class="d-none d-lg-flex px-0">
-          <b-navbar-brand href="/" class="mr-0">
-            <img src="../../assets/images/logo.svg" alt="wj-logo" class="header-logo rounded" height="30px" />
+          <b-navbar-brand href="/" class="mr-0 ml-5">
+            <img src="../../assets/images/logo.svg" alt="wj-logo" class="header-logo rounded" height="40px" />
           </b-navbar-brand>
 
-          <b-navbar-nav>
-            <b-nav-item href="/">خانه</b-nav-item>
-            <b-nav-item href="/" class="mr-4">مقالات</b-nav-item>
-            <b-nav-item href="/" class="mr-4">دوره‌ها</b-nav-item>
-            <b-nav-item href="/" class="mr-4">همکاری با ما</b-nav-item>
-            <b-nav-item href="/" class="mr-4">درباره ما</b-nav-item>
-            <b-nav-item href="/" class="mr-4">تماس با ما</b-nav-item>
+          <b-navbar-nav class="mr-5">
+            <b-nav-item href="/" class="mx-5">خانه</b-nav-item>
+            <b-nav-item href="/" class="mx-5">محصولات</b-nav-item>
+            <b-nav-item href="/" class="mx-5">خدمات</b-nav-item>
+            <b-nav-item href="/" class="mx-5">وبلاگ</b-nav-item>
           </b-navbar-nav>
 
           <!-- Left aligned nav items -->
           <b-navbar-nav class="mr-auto">
-            <b-nav-form>
-              <b-form-input size="sm" class="input-search pl-5" placeholder="جستجو"></b-form-input>
-              <b-icon icon="search" class="icon-search"></b-icon>
-            </b-nav-form>
 
             <b-nav-item-dropdown left class="mr-5">
               <!-- Using 'button-content' slot -->
               <template #button-content>
-                <b-avatar size="1.5rem" variant="secondary" class="mx-2"></b-avatar>
+                <b-avatar size="1.5rem" variant="dark" class="mx-2"></b-avatar>
                 <em>کاربر</em>
               </template>
               <b-dropdown-item href="/">پروفایل</b-dropdown-item>
@@ -67,10 +61,6 @@
                 <b-dropdown-item @click="logOutUser">خروج</b-dropdown-item>
               </b-nav-item-dropdown>
 
-              <b-nav-form>
-                <b-form-input size="sm" class="input-search pl-5" placeholder="جستجو"></b-form-input>
-                <b-icon icon="search" class="icon-search"></b-icon>
-              </b-nav-form>
             </b-navbar-nav>
           </b-collapse>
         </b-container>

@@ -23,63 +23,11 @@
   src: url('../fonts/IranSans/IRANSans.ttf') format('truetype');
 }
 
-/* Anjoman */
-@font-face {
-  font-family: Anjoman-Normal;
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('../fonts/Anjoman/Anjoman-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: Anjoman-Medium;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/Anjoman/Anjoman-Medium.woff') format('woff');
-}
-
-@font-face {
-  font-family: Anjoman-Bold;
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('../fonts/Anjoman/Anjoman-Bold.woff') format('woff');
-}
-
-@font-face {
-  font-family: Anjoman-Black;
-  font-style: normal;
-  font-weight: 850;
-  font-display: swap;
-  src: url('../fonts/Anjoman/Anjoman-Black.woff') format('woff');
-}
-
-@font-face {
-  font-family: Anjoman-Heavy;
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('../fonts/Anjoman/Anjoman-Heavy.woff') format('woff');
-}
-
-@font-face {
-  font-family: Anjoman-SuperHeavy;
-  font-style: normal;
-  font-weight: 1000;
-  font-display: swap;
-  src: url('../fonts/Anjoman/Anjoman-SuperHeavy.woff') format('woff');
-}
-
 
 .font-iransans {
   font-family: IRANSans, serif !important;
 }
 
-.font-anjoman {
-  font-family: Anjoman, serif !important;
-}
 
 .font-10 {
   font-size: $font-10 !important;

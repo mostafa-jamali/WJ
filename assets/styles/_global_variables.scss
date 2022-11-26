@@ -1,23 +1,24 @@
-@import 'global_mixins';
-
 // colors
-$primary: #293769;
-$verified: #12182b;
-$secondary: #52fbdd;
-$secondary-darker: #03866f;
-$discount-color: #1A0DAB;
-$success: #0EAD69;
-$middle-pass: #EC850F;
-$danger: #D91E36;
+$primary: #00c853;
+$success: #0ead69;
+$danger: #fe5656;
 
 // Grayscales
-$white: #FFF;
-$gray-1: #F2F2F2;
-$gray-2: #DBDBDB;
-$gray-3: #99999C;
-$gray-4: #828282;
-$gray-5: #4A4A4A;
-$black: #000;
+$white: #ffffff;
+$gray-1: #e5e5e5;
+$gray-2: #7b7b7b;
+$gray-3: rgba(123, 123, 123, 0.5);
+$gray-4: #373737;
+$black: #000000;
+
+//buttons
+$default: #00c853;
+$hover: #00c853;
+$pressed: rgba(0, 200, 83, 0.5);
+$active-bordeer: #00712f;
+$active: #00c853;
+$disabled: #817f7f;
+$loading: #00c853;
 
 // spacers
 $spacer: 1rem !default;
@@ -49,7 +50,7 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1200px,
 );
 
 $grid-xs: map-get($grid-breakpoints, 'xs');
