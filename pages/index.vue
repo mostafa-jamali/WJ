@@ -8,7 +8,7 @@
     <b-row class="d-flex flex-column align-items-center">
       <h1 class="mb-5">وبلاگ</h1>
       <b-col cols="6" class="mb-5">
-        <b-form-input v-model="" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="querySearch" placeholder="Enter your name"></b-form-input>
       </b-col>
     </b-row>
     <b-row>
@@ -16,7 +16,11 @@
         <categories></categories>
       </b-col>
       <b-col cols="8" class="result-section">
-        <blog-card></blog-card>
+        <p v-if="$fetchState.pending">Loading....</p>
+        <p v-else-if="$fetchState.error">Error while fetching mountains</p>
+        <template v-else>
+          <blog-card v-for="(blog, index) in blogs" :key="index" :blog="blog"></blog-card>
+        </template>
       </b-col>
     </b-row>
   </b-container>
@@ -29,7 +33,12 @@ export default {
     return {
       btnName: 'بیشتر',
       loading: false,
+      querySearch: '',
+      blogs: [],
     };
+  },
+  async fetch() {
+    this.blogs = await fetch('https://challenge.webjar.ir/posts').then(res => res.json());
   },
 };
 </script>

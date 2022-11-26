@@ -5,11 +5,18 @@ body {
 .wj-header {
   top: 0;
   z-index: 1000;
-  
+
   .navbar {
     // height: 90px;
     // background: $white;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
     color: $black;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: $gray-4;
+  }
+  .navbar-dark .navbar-toggler{
+    color: $gray-4;
+    border-color: $gray-4;
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="wj-header">
     <client-only>
-      <b-navbar toggleable="lg" type="dark" variant="dark" fixed="top">
+      <b-navbar toggleable="lg" type="dark" variant="light" fixed="top">
         <!-- PC header -->
         <b-container class="d-none d-lg-flex px-0">
           <b-navbar-brand href="/" class="mr-0 ml-5">

@@ -19,9 +19,14 @@ main {
 
   .result-section {
     .blog-card {
-      height: 288px;
+      height: 200px;
       box-shadow: 0px 0px 30px rgba(0, 200, 83, 0.05);
       border-radius: 15px;
+
+      .blog-img{
+        height: 200px;
+        width: 100%;
+      }
     }
   }
 }
