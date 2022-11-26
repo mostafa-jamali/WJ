@@ -1,0 +1,20 @@
+body {
+  padding-top: 80px; // ~ height of header
+}
+
+.wj-header {
+  top: 0;
+  z-index: 1000;
+  // height: 57px;
+  width: 100%;
+  box-shadow: 0px 3px 10px $primary;
+
+  .input-search{
+    width: 250px;
+  }
+
+  .icon-search{
+    margin-right: -22px;
+    cursor: pointer;
+  }
+}
