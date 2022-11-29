@@ -12,4 +12,4 @@ export default {
 };
 </script>
 
-<style lang="scss" src="~/assets/styles/component-styles/Footer.scss"></style>
+<style lang="scss" src="~/assets/styles/layout/Footer.scss"></style>

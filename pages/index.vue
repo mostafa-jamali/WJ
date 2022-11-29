@@ -7,17 +7,17 @@
     </ol>
     <b-row class="d-flex flex-column align-items-center">
       <h1 class="mb-5">وبلاگ</h1>
-      <b-col cols="6" class="mb-5">
+      <b-col cols="10" md="8" lg="6" class="mb-5">
         <b-form-input v-model="querySearch" placeholder="Enter your name"></b-form-input>
       </b-col>
     </b-row>
     <b-row>
-      <b-col cols="4" class="pl-5">
+      <b-col cols="12" md="6" lg="4" class="pl-lg-5">
         <categories></categories>
       </b-col>
-      <b-col cols="8" class="result-section">
-        <p v-if="$fetchState.pending">Loading....</p>
-        <p v-else-if="$fetchState.error">Error while fetching mountains</p>
+      <b-col cols="12" lg="8" class="result-section mt-5 mt-lg-0">
+        <p v-if="$fetchState.pending">در حال دریافت اطلاعات....</p>
+        <p v-else-if="$fetchState.error">در دریافت اطلاعات خطایی رخ داده است</p>
         <template v-else>
           <blog-card v-for="(blog, index) in blogs" :key="index" :blog="blog"></blog-card>
         </template>
@@ -26,6 +26,7 @@
   </b-container>
 </template>
 
+<style lang="scss" src="~/assets/styles/layout/main.scss"></style>
 <script>
 export default {
   name: 'IndexPage',
@@ -42,4 +43,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" src="~/assets/styles/component-styles/main.scss"></style>

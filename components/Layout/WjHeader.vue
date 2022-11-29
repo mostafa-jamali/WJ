@@ -80,4 +80,4 @@ export default {
   },
 };
 </script>
-<style lang="scss" src="~/assets/styles/component-styles/Header.scss"></style>
+<style lang="scss" src="~/assets/styles/layout/Header.scss"></style>

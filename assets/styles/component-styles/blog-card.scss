@@ -1,0 +1,37 @@
+.blog-card {
+  //height: 200px;
+  box-shadow: 0px 0px 30px rgba(0, 200, 83, 0.05);
+  border-radius: 15px;
+
+  .blog-img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .blog-title {
+    font-size: 1.1rem;
+    color: $gray-4;
+    font-weight: 500;
+  }
+
+  .blog-body {
+    width: 85%;
+    font-size: 0.9rem;
+    color: $gray-4;
+    font-weight: 300;
+    line-height: 160%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    // Addition lines for 4 line or multiline ellipsis
+    display: -webkit-box !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+
+  .blog-info p {
+    font-size: 0.8rem;
+    color: $black;
+    font-weight: 300;
+  }
+}

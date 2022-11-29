@@ -1,5 +1,5 @@
 <template>
-  <div class="category-section ml-5"></div>
+  <div class="category-section ml-lg-5"></div>
 </template>
 <script>
 export default {
@@ -7,5 +7,5 @@ export default {
 }
 </script>
 <style lang="scss">
-  
+
 </style>
