@@ -1,6 +1,6 @@
 <template>
   <b-row class="blog-card mb-3">
-    <b-col cols="4" lg="3"><img src="../../assets/images/blog-img.png" alt="blog-ig" class="blog-img"/></b-col>
+    <b-col cols="4" lg="3"><img src="../../assets/images/blog-img.png" alt="blog-img" class="blog-img"/></b-col>
     <b-col cols="8" lg="9">
       <b-row>
         <b-col cols="12" lg="9">
@@ -22,7 +22,7 @@
           </div>
         </b-col>
         <b-col cols="12" lg="3" class="align-self-end mb-2">
-          <NuxtLink to="/">
+          <NuxtLink :to='`/blogs/${blog._id}`'>
             <base-button :btn-name="btnName"></base-button>
           </NuxtLink>
         </b-col>

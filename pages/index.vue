@@ -8,7 +8,8 @@
     <b-row class="d-flex flex-column align-items-center">
       <h1 class="mb-5">وبلاگ</h1>
       <b-col cols="10" md="8" lg="6" class="mb-5">
-        <b-form-input v-model="querySearch" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="querySearch" placeholder="     جستجو کنید ..." class="input-search"></b-form-input>
+        <i class="icon-search"></i>
       </b-col>
     </b-row>
     <b-row>
@@ -20,13 +21,16 @@
         <p v-else-if="$fetchState.error">در دریافت اطلاعات خطایی رخ داده است</p>
         <template v-else>
           <blog-card v-for="(blog, index) in blogs" :key="index" :blog="blog"></blog-card>
+
+          <!-- pagination  -->
+          <b-pagination v-model="currentPage" pills :total-rows="totalBlogs" :per-page="limit" size="sm"
+                        @input="getBlogs"></b-pagination>
         </template>
       </b-col>
     </b-row>
   </b-container>
 </template>
 
-<style lang="scss" src="~/assets/styles/layout/main.scss"></style>
 <script>
 export default {
   name: 'IndexPage',
@@ -36,10 +40,37 @@ export default {
       loading: false,
       querySearch: '',
       blogs: [],
+      currentPage: 1,
+      limit: 5,
+      skip: 0,
+      totalBlogs: null
     };
   },
   async fetch() {
-    this.blogs = await fetch('https://challenge.webjar.ir/posts').then(res => res.json());
+    await this.getBlogs();
+    await this.getBlogsCount();
   },
+  methods: {
+    async getBlogsCount() {
+      this.totalBlogs = await this.$axios.$get('https://challenge.webjar.ir/posts/count')
+    },
+    async getBlogs(page) {
+      if (page) {
+        this.skip = (page - 1) * 5
+      } else {
+        this.skip = 0
+      }
+      const requestOptions = {
+        params: {
+          limit: 5,
+          skip: this.skip
+        }
+      }
+      this.blogs = await this.$axios.$get('https://challenge.webjar.ir/posts', requestOptions)
+    },
+  }
 };
 </script>
+
+<style lang="scss" src="~/assets/styles/layout/main.scss"></style>
+
