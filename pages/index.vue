@@ -37,6 +37,7 @@
 
 export default {
   name: 'IndexPage',
+  auth: false,
   data() {
     return {
       btnName: 'بیشتر',

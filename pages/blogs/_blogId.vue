@@ -15,6 +15,7 @@
 <script>
 export default {
   name: 'BlogCard',
+  middleware: 'auth',
   props: {
     blog: {
       type: Object,

@@ -41,6 +41,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://auth.nuxtjs.org/
+    '@nuxtjs/auth-next'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -48,6 +49,26 @@ export default {
 
   /////////////////// customizing (New Configs) ////////////////////
   // customize styleResource module
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'token.accessToken',
+          // global: true,
+          // required: true,
+          // type: 'Bearer'
+        },
+        user:{
+          property: 'fullName',
+          autoFetch: false
+        },
+        endpoints: {
+          login: { url: 'https://challenge.webjar.ir/auth/login', method: 'post' },
+        }
+      }
+    }
+  },
+
   styleResources: {
     scss: '~/assets/styles/_global_variables.scss',
   },

@@ -5,7 +5,7 @@
         <!-- PC header -->
         <b-container class="d-none d-lg-flex px-0">
           <b-navbar-brand href="/" class="mr-0 ml-5">
-            <img src="../../assets/images/logo.svg" alt="wj-logo" class="header-logo rounded" height="40px" />
+            <img src="../../assets/images/logo.svg" alt="wj-logo" class="header-logo rounded" height="40px"/>
           </b-navbar-brand>
 
           <b-navbar-nav class="mr-5">
@@ -17,22 +17,23 @@
 
           <!-- Left aligned nav items -->
           <b-navbar-nav class="mr-auto">
-            <b-nav-item-dropdown left class="mr-5">
-              <!-- Using 'button-content' slot -->
-              <template #button-content>
-                <i class="icon-user mx-2"></i>
-                <em>کاربر</em>
-              </template>
-              <b-dropdown-item href="/">پروفایل</b-dropdown-item>
-              <b-dropdown-item @click="logOutUser">خروج</b-dropdown-item>
-            </b-nav-item-dropdown>
+            <b-button variant="primary px-5 py-1" @click="goToLoginPage">ورود</b-button>
+            <!--            <b-nav-item-dropdown left class="mr-5">-->
+            <!--              &lt;!&ndash; Using 'button-content' slot &ndash;&gt;-->
+            <!--              <template #button-content>-->
+            <!--                <i class="icon-user mx-2"></i>-->
+            <!--                <em>کاربر</em>-->
+            <!--              </template>-->
+            <!--              <b-dropdown-item href="/">پروفایل</b-dropdown-item>-->
+            <!--              <b-dropdown-item @click="logOutUser">خروج</b-dropdown-item>-->
+            <!--            </b-nav-item-dropdown>-->
           </b-navbar-nav>
         </b-container>
 
         <!-- mobile header -->
         <b-container class="d-flex d-lg-none px-0">
           <b-navbar-brand href="/" class="mr-0">
-            <img src="../../assets/images/logo.svg" alt="wj-logo" class="header-logo rounded" height="30px" />
+            <img src="../../assets/images/logo.svg" alt="wj-logo" class="header-logo rounded" height="30px"/>
           </b-navbar-brand>
 
           <b-navbar-toggle target="navbar-toggle-collapse">
@@ -75,8 +76,11 @@ export default {
   methods: {
     async logOutUser() {
       await this.$auth.logout();
-      this.$router.push({ path: '/auth/login' });
+      this.$router.push({path: '/auth/login'});
     },
+    goToLoginPage() {
+      this.$router.push({path: '/login'})
+    }
   },
 };
 </script>
