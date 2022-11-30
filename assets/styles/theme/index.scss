@@ -27,8 +27,8 @@
   .custom-control-input {
     &:checked ~ .custom-control-label::before {
       box-shadow: none !important;
-      border: $gray-1 solid 1px !important;
-      background-color: $white !important;
+      border: $primary solid 1px !important;
+      background-color: $primary !important;
     }
 
     &::after {

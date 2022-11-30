@@ -23,8 +23,10 @@
           <blog-card v-for="(blog, index) in blogs" :key="index" :blog="blog"></blog-card>
 
           <!-- pagination  -->
-          <b-pagination v-model="currentPage" pills :total-rows="totalBlogs" :per-page="limit" size="sm"
-                        @input="getBlogs"></b-pagination>
+          <div v-if="totalBlogs > 5" class="d-flex justify-content-center my-5">
+            <b-pagination v-model="currentPage" pills :total-rows="totalBlogs" :per-page="limit"
+                          @input="getBlogs"></b-pagination>
+          </div>
         </template>
       </b-col>
     </b-row>
@@ -32,6 +34,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'IndexPage',
   data() {
@@ -43,13 +46,15 @@ export default {
       currentPage: 1,
       limit: 5,
       skip: 0,
-      totalBlogs: null
+      totalBlogs: null,
     };
   },
+
   async fetch() {
     await this.getBlogs();
     await this.getBlogsCount();
   },
+
   methods: {
     async getBlogsCount() {
       this.totalBlogs = await this.$axios.$get('https://challenge.webjar.ir/posts/count')

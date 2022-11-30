@@ -26,9 +26,9 @@ export default {
       blog: {}
     };
   },
-  async fetch() {
+  async fetch({params}) {
     this.blog = await fetch(
-      `https://challenge.webjar.ir/posts/${id}`
+      `https://challenge.webjar.ir/posts/${params.blogId}`
     ).then(res => res.json())
   },
 };
