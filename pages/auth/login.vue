@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import {mapMutations} from "vuex";
+
 export default {
   name: 'Login',
   layout: 'login',
@@ -36,13 +38,16 @@ export default {
       }
     };
   },
+
   methods: {
+    ...mapMutations(['USERPROFILE']),
+
     async userLogin() {
       try {
         let response = await this.$auth.loginWith('local', {data: this.login})
-        console.log({response});
-        console.log('user :',this.$auth.user)
-        this.$router.push({path: '/'});
+
+        // this.$store.commit('USERPROFILE', response.data);
+        this.$auth.strategies.local.user = response.data
       } catch (err) {
         console.log({err})
       }

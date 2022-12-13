@@ -58,15 +58,19 @@ export default {
           // required: true,
           // type: 'Bearer'
         },
-        user:{
-          property: 'fullName',
-          autoFetch: false
-        },
+        user: {}, // information of user after loged in
         endpoints: {
           login: { url: 'https://challenge.webjar.ir/auth/login', method: 'post' },
+          user: false
         }
       }
-    }
+    },
+    // https://auth.nuxtjs.org/api/options/
+    redirect:{
+      login: '/auth/login',
+      logout: '/',
+      home: '/'
+    },
   },
 
   styleResources: {

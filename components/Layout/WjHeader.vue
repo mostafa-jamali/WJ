@@ -4,20 +4,21 @@
       <b-navbar toggleable="lg" type="dark" variant="light" fixed="top">
         <!-- PC header -->
         <b-container class="d-none d-lg-flex px-0">
-          <b-navbar-brand href="/" class="mr-0 ml-5">
-            <img src="../../assets/images/logo.svg" alt="wj-logo" class="header-logo rounded" height="40px"/>
-          </b-navbar-brand>
+          <nuxt-link to="/">
+            <img src="../../assets/images/logo.svg" alt="wj-logo" class="header-logo rounded" height="30px"/>
+          </nuxt-link>
 
           <b-navbar-nav class="mr-5">
-            <b-nav-item href="/" class="mx-5">خانه</b-nav-item>
-            <b-nav-item href="/" class="mx-5">محصولات</b-nav-item>
-            <b-nav-item href="/" class="mx-5">خدمات</b-nav-item>
-            <b-nav-item href="/" class="mx-5">وبلاگ</b-nav-item>
+            <nuxt-link to="/" class="mx-5">خانه</nuxt-link>
+            <nuxt-link to="/" class="mx-5">محصولات</nuxt-link>
+            <nuxt-link to="/" class="mx-5">خدمات</nuxt-link>
+            <nuxt-link to="/" class="mx-5">وبلاگ</nuxt-link>
           </b-navbar-nav>
 
           <!-- Left aligned nav items -->
           <b-navbar-nav class="mr-auto">
-            <b-button variant="primary px-5 py-1" @click="goToLoginPage">ورود</b-button>
+            <p v-if="userInfo.fullName">{{userInfo.fullName}}</p>
+            <b-button v-else variant="primary px-5 py-1" @click="goToLoginPage">ورود</b-button>
             <!--            <b-nav-item-dropdown left class="mr-5">-->
             <!--              &lt;!&ndash; Using 'button-content' slot &ndash;&gt;-->
             <!--              <template #button-content>-->
@@ -32,9 +33,9 @@
 
         <!-- mobile header -->
         <b-container class="d-flex d-lg-none px-0">
-          <b-navbar-brand href="/" class="mr-0">
-            <img src="../../assets/images/logo.svg" alt="wj-logo" class="header-logo rounded" height="30px"/>
-          </b-navbar-brand>
+            <nuxt-link to="/">
+              <img src="../../assets/images/logo.svg" alt="wj-logo" class="header-logo rounded" height="30px"/>
+            </nuxt-link>
 
           <b-navbar-toggle target="navbar-toggle-collapse">
             <template #default="{ expanded }">
@@ -45,10 +46,10 @@
 
           <b-collapse id="navbar-toggle-collapse" is-nav>
             <b-navbar-nav class="pr-0">
-              <b-nav-item href="/">خانه</b-nav-item>
-              <b-nav-item href="/">محصولات</b-nav-item>
-              <b-nav-item href="/">خدمات</b-nav-item>
-              <b-nav-item href="/">وبلاگ</b-nav-item>
+              <nuxt-link to="/">خانه</nuxt-link>
+              <nuxt-link to="/">محصولات</nuxt-link>
+              <nuxt-link to="/">خدمات</nuxt-link>
+              <nuxt-link to="/">وبلاگ</nuxt-link>
             </b-navbar-nav>
 
             <!-- Left aligned nav items -->
@@ -73,13 +74,23 @@
 <script>
 export default {
   name: 'WjHeader',
+  data(){
+    return{
+      userInfo: {}
+    }
+  },
+  mounted() {
+    if (this.$nuxt.$auth.loggedIn) {
+      this.userInfo = this.$auth.strategies.local.user;
+    }
+  },
   methods: {
     async logOutUser() {
       await this.$auth.logout();
       this.$router.push({path: '/auth/login'});
     },
     goToLoginPage() {
-      this.$router.push({path: '/login'})
+      this.$router.push({path: '/auth/login'})
     }
   },
 };
